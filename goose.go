@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-const VERSION = "v2.7.0-rc3"
+const VERSION = "v2.7.0-rc5"
 
 var (
 	minVersion      = int64(0)
