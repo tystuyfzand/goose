@@ -3,21 +3,29 @@ package goose
 import (
 	"database/sql"
 	"fmt"
+	"github.com/spf13/afero"
 	"strconv"
 )
 
 const VERSION = "v2.7.0-rc3"
 
 var (
-	minVersion         = int64(0)
-	maxVersion         = int64((1 << 63) - 1)
-	timestampFormat    = "20060102150405"
-	verbose            = false
+	minVersion      = int64(0)
+	maxVersion      = int64((1 << 63) - 1)
+	timestampFormat = "20060102150405"
+	verbose         = false
+
+	fs = afero.NewOsFs()
 )
 
 // SetVerbose set the goose verbosity mode
 func SetVerbose(v bool) {
 	verbose = v
+}
+
+// SetFs sets the base filesystem for migrations
+func SetFs(f afero.Fs) {
+	fs = f
 }
 
 // Run runs a goose command.

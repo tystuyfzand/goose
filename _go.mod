@@ -10,4 +10,5 @@ require (
 	github.com/mattn/go-sqlite3 v1.10.0
 	github.com/pkg/errors v0.8.1
 	github.com/ziutek/mymysql v1.5.4
+	github.com/spf13/afero v1.3.2
 )
